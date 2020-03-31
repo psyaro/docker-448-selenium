@@ -1,0 +1,20 @@
+#seleniumtest2-hub:
+#  image: selenium/hub
+#  container_name: 'seleniumtest2-hub'
+#
+#seleniumtest2-python:
+#  image: python:3
+#  container_name: 'seleniumtest2-python'
+#  links:
+#    - seleniumtest2-hub:hub
+#  command: 'python main.py'
+#  working_dir: '/root/tests/'
+#  volumes:
+#    - ./tests/:/root/tests/
+#  
+rank448-selenium:
+  build: ./selenium/
+  container_name: 'rank448-selenium'
+  ports:
+    - 8090:8000
+    
